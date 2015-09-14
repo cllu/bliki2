@@ -1,7 +1,5 @@
 package info.bliki.wiki.model;
 
-import info.bliki.extensions.scribunto.engine.ScribuntoEngine;
-import info.bliki.extensions.scribunto.template.Frame;
 import info.bliki.htmlcleaner.BaseToken;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.filter.AbstractParser;
@@ -128,7 +126,6 @@ public interface IWikiModel extends IConfiguration {
      * ending with gif, png, jpg, bmp)
      *
      * @param imageSrc
-     * @param hashSection
      * @param imageAltText
      */
     void appendExternalImageLink(String imageSrc, String imageAltText);
@@ -163,7 +160,7 @@ public interface IWikiModel extends IConfiguration {
      *            the unparsed header string
      * @param headLevel
      *            level of header (i.e. h1, h2, h3, h4, 5h,..)
-     * @param noToc
+     * @param noToC
      *            don't show the &quot;table of content&quot;
      * @param headCounter
      *            the total number of headers parsed
@@ -470,12 +467,6 @@ public interface IWikiModel extends IConfiguration {
      */
     TagToken getNode(int offset);
 
-    // scribunto stuff
-    Frame getFrame();
-    void setFrame(Frame frame);
-
-    ScribuntoEngine createScribuntoEngine();
-
     /**
      * Get the title of the current wiki article.
      *
@@ -715,7 +706,6 @@ public interface IWikiModel extends IConfiguration {
      * href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *
-     * @param namespace
      * @return <code>true</code> if parsing of semantic mediawiki (SMW) links is
      *         enabled
      */

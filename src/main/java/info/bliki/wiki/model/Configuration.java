@@ -1,6 +1,5 @@
 package info.bliki.wiki.model;
 
-import info.bliki.extensions.scribunto.template.Invoke;
 import info.bliki.htmlcleaner.TagToken;
 import info.bliki.wiki.filter.ParsedPageName;
 import info.bliki.wiki.tags.ATag;
@@ -216,7 +215,7 @@ public class Configuration implements IConfiguration {
         TEMPLATE_FUNCTION_MAP.put("#ifeq", Ifeq.CONST);
         TEMPLATE_FUNCTION_MAP.put("#ifexist", Ifexist.CONST);
         TEMPLATE_FUNCTION_MAP.put("#ifexpr", Ifexpr.CONST);
-        TEMPLATE_FUNCTION_MAP.put("#invoke", Invoke.CONST);
+        //TEMPLATE_FUNCTION_MAP.put("#invoke", Invoke.CONST);
         TEMPLATE_FUNCTION_MAP.put("#switch", Switch.CONST);
         TEMPLATE_FUNCTION_MAP.put("#tag", Tag.CONST);
         TEMPLATE_FUNCTION_MAP.put("#time", Time.CONST);
