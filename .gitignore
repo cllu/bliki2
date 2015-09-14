@@ -1,0 +1,10 @@
+# IDE
+.idea/
+*.iml
+
+# Compilation
+target/
+
+# Log
+derby.log
+log.txt
