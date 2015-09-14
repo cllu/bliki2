@@ -36,6 +36,7 @@ public class WikiXMLParser extends DefaultHandler {
     private static final String WIKIPEDIA_REVISION = "revision";
     private static final String WIKIPEDIA_NAMESPACE = "namespace";
     private static final String WIKIPEDIA_TIMESTAMP = "timestamp";
+    private static final String WIKIPEDIA_REDIRECT = "redirect";
     private static final String WIKIPEDIA_ID = "id";
 
     private Siteinfo fSiteinfo = null;
@@ -123,9 +124,11 @@ public class WikiXMLParser extends DefaultHandler {
         if (WIKIPEDIA_PAGE.equals(qName)) {
             fArticle = new WikiArticle();
             fRevision = false;
-        }
-        if (WIKIPEDIA_REVISION.equals(qName)) {
+        } else if (WIKIPEDIA_REVISION.equals(qName)) {
             fRevision = true;
+        } else if (WIKIPEDIA_REDIRECT.equals(qName)) {
+            // we assume fArticle is not null!
+            fArticle.setRedirect(atts.getValue("title"));
         }
     }
 

@@ -8,6 +8,7 @@ import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
  */
 public class WikiArticle {
     private String id = null;
+    private String redirect = null;
     private Integer integerNamespace = 0;
     private String namespace = "";
     private String revisionId = null;
@@ -166,5 +167,13 @@ public class WikiArticle {
     @Override
     public String toString() {
         return title + "\n" + text;
+    }
+
+    public String getRedirect() {
+        return redirect;
+    }
+
+    public void setRedirect(String redirect) {
+        this.redirect = redirect;
     }
 }

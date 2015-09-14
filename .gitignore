@@ -8,3 +8,5 @@ target/
 # Log
 derby.log
 log.txt
+
+data/

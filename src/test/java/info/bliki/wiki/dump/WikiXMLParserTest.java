@@ -39,8 +39,9 @@ public class WikiXMLParserTest {
 
         assertThat(articles).hasSize(3);
         assertThat(parsedSiteInfo[0]).isNotNull();
-        Siteinfo siteinfo = parsedSiteInfo[0];
 
+        // check SiteInfo
+        Siteinfo siteinfo = parsedSiteInfo[0];
         assertThat(siteinfo.getSitename()).isEqualTo("Wikipedia");
         assertThat(siteinfo.getGenerator()).isEqualTo("MediaWiki 1.25wmf13");
         assertThat(siteinfo.getBase()).isEqualTo("http://en.wikipedia.org/wiki/Main_Page");
@@ -48,5 +49,11 @@ public class WikiXMLParserTest {
         assertThat(main.getCanonicalName()).isEqualTo("");
         final Namespace.NamespaceValue topic = siteinfo.getNamespace().getNamespaceByNumber(2600);
         assertThat(topic.getCanonicalName()).isEqualTo("Topic");
+
+        // check pages
+        WikiArticle article = articles.get(0);
+        assertThat(article.getRedirect().equals("Computer accessibility"));
+        assertThat(articles.get(1).getRedirect() == null);
+
     }
 }
