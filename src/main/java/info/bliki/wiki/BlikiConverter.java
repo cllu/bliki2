@@ -1,7 +1,5 @@
 package info.bliki.wiki;
 
-import info.bliki.html.HTML2WikiConverter;
-import info.bliki.html.wikipedia.ToWikipedia;
 import info.bliki.wiki.filter.PlainTextConverter;
 import info.bliki.wiki.model.Configuration;
 import info.bliki.wiki.model.WikiModel;
@@ -25,16 +23,6 @@ public class BlikiConverter extends JFrame {
         public void actionPerformed(java.awt.event.ActionEvent event) {
             input.setText("");
             output.setText("");
-        }
-    }
-
-    class Html2WikiListener implements java.awt.event.ActionListener {
-        @Override
-        public void actionPerformed(java.awt.event.ActionEvent event) {
-            String strData = input.getText();
-            HTML2WikiConverter conv = new HTML2WikiConverter(strData);
-            String result = conv.toWiki(new ToWikipedia(true, true, true));
-            output.setText(result);
         }
     }
 
@@ -90,7 +78,6 @@ public class BlikiConverter extends JFrame {
 
     private javax.swing.JButton wikiToHtmlButton;
     private javax.swing.JButton wikiToWikiPlaintext;
-    private javax.swing.JButton htmlToWikiButton;
     private javax.swing.JButton clearButton;
 
     private javax.swing.JTextArea input;
@@ -106,8 +93,6 @@ public class BlikiConverter extends JFrame {
         wikiToHtmlButton.addActionListener(new Wiki2HtmlListener());
         wikiToWikiPlaintext = new javax.swing.JButton("Wiki text to plain text");
         wikiToWikiPlaintext.addActionListener(new Wiki2PlainListener());
-        htmlToWikiButton = new javax.swing.JButton("HTML to wiki text");
-        htmlToWikiButton.addActionListener(new Html2WikiListener());
         clearButton = new javax.swing.JButton("Clear input/output");
         clearButton.addActionListener(new ClearListener());
         input = new javax.swing.JTextArea(20, 80);
@@ -128,7 +113,6 @@ public class BlikiConverter extends JFrame {
         horizontalButtonPanel.setLayout(new java.awt.FlowLayout());
         horizontalButtonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         horizontalButtonPanel.add(wikiToHtmlButton);
-        horizontalButtonPanel.add(htmlToWikiButton);
         horizontalButtonPanel.add(wikiToWikiPlaintext);
         horizontalButtonPanel.add(clearButton);
         container.add(horizontalButtonPanel);
