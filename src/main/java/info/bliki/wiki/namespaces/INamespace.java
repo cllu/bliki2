@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Mediawiki namespace for a specific language.
+ * MediaWiki namespace for a specific language.
  *
- * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">Mediawiki - Manual:Namespace</a>
+ * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces">MediaWiki - Manual:Namespace</a>
  * @see <a href="https://www.mediawiki.org/wiki/Extension_default_namespaces">Extension default namespaces</a>
  * @see <a href="https://github.com/wikimedia/mediawiki-core/blob/master/includes/Defines.php">Defines.php</a>
  *

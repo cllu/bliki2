@@ -1,7 +1,7 @@
 package info.bliki.wiki.template.expr;
 
 /**
- * Exception for a syntax error detected by the parser for a Mediawiki template
+ * Exception for a syntax error detected by the parser for a MediaWiki template
  * expression.
  *
  */

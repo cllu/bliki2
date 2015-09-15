@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Configuration interface for extensions similar to the Mediawiki <a
+ * Configuration interface for extensions similar to the MediaWiki <a
  * href="http://www.mediawiki.org/wiki/Manual:Tag_extensions">HTML styled tag
  * extension</a>, <a
  * href="http://www.mediawiki.org/wiki/Manual:Parser_functions">template parser

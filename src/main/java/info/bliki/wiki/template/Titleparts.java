@@ -9,7 +9,7 @@ import java.util.List;
  * function separates a pagetitle into segments based on slashes, then returns
  * some of those segments as output. See <a href=
  * "https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#.23titleparts"
- * >Mediawiki - Help:Extension:ParserFunctions - Titleparts</a>
+ * >MediaWiki - Help:Extension:ParserFunctions - Titleparts</a>
  *
  */
 public class Titleparts extends AbstractTemplateFunction {

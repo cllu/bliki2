@@ -3,7 +3,7 @@ package info.bliki.wiki.dump;
 import info.bliki.wiki.namespaces.INamespace.NamespaceCode;
 
 /**
- * Represents a single wiki page from a Mediawiki dump.
+ * Represents a single wiki page from a MediaWiki dump.
  *
  */
 public class WikiArticle {
@@ -30,7 +30,7 @@ public class WikiArticle {
 
     /**
      * Get the integer key of the namespace or <code>0</code> if no namespace is
-     * associated. For example in an english Mediawiki installation <i>10</i> is
+     * associated. For example in an english MediaWiki installation <i>10</i> is
      * typically the <i>Template</i> namespace and <i>14</i> is typically the
      * <i>Category</i> namespace.
      *

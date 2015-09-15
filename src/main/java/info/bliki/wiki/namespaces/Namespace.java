@@ -16,8 +16,8 @@ import static info.bliki.wiki.namespaces.INamespace.NamespaceCode.*;
 import static java.lang.String.CASE_INSENSITIVE_ORDER;
 
 /**
- * Mediawiki Namespaces.
- * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"> Mediawiki - Manual:Namespace</a>
+ * MediaWiki Namespaces.
+ * @see <a href="https://www.mediawiki.org/wiki/Manual:Namespace#Built-in_namespaces"> MediaWiki - Manual:Namespace</a>
  */
 public class Namespace implements INamespace {
     /**

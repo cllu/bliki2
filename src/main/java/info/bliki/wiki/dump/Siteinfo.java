@@ -6,7 +6,7 @@ import info.bliki.wiki.namespaces.Namespace.NamespaceValue;
 import javax.annotation.Nullable;
 
 /**
- * The site and namespace information found in the header of a Mediawiki dump
+ * The site and namespace information found in the header of a MediaWiki dump
  */
 public class Siteinfo {
     private String sitename;
@@ -34,7 +34,7 @@ public class Siteinfo {
 
     /**
      * Get the namespace of this site from the given integer key. For example in
-     * an english Mediawiki installation <i>10</i> is typically the
+     * an english MediaWiki installation <i>10</i> is typically the
      * <i>Template</i> namespace and <i>14</i> is typically the <i>Category</i>
      * namespace.
      *
@@ -56,7 +56,7 @@ public class Siteinfo {
 
     /**
      * Get the integer value of this site from the given namespace. For example in
-     * an english Mediawiki installation <i>10</i> is typically the
+     * an english MediaWiki installation <i>10</i> is typically the
      * <i>Template</i> namespace and <i>14</i> is typically the <i>Category</i>
      * namespace.
      *

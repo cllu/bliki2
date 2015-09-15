@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 /**
  * See <a href="https://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic
- * words</a> for a list of Mediawiki magic words.
+ * words</a> for a list of MediaWiki magic words.
  */
 public class MagicWord {
 
@@ -183,7 +183,7 @@ public class MagicWord {
      * Determine if a template name corresponds to a magic word requiring special
      * handling. See <a
      * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
-     * for a list of Mediawiki magic words.
+     * for a list of MediaWiki magic words.
      *
      * @param name
      *            the potential magic word
@@ -198,7 +198,7 @@ public class MagicWord {
      * Determine if a template name corresponds to a magic word requiring
      * special handling. See <a
      * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
-     * for a list of Mediawiki magic words.
+     * for a list of MediaWiki magic words.
      *
      * @param name
      *            the potential magic word
@@ -213,7 +213,7 @@ public class MagicWord {
      * Process a magic word, returning the value corresponding to the magic word
      * value. See <a
      * href="http://www.mediawiki.org/wiki/Help:Magic_words">Help:Magic words</a>
-     * for a list of Mediawiki magic words.
+     * for a list of MediaWiki magic words.
      *
      * @param magicWord
      *            the magic word to process

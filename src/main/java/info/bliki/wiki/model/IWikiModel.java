@@ -977,7 +977,7 @@ public interface IWikiModel extends IConfiguration {
     void setParameterParsingMode(boolean parameterParsingMode);
 
     /**
-     * Activate the parsing of semantic Mediawiki (SMW) links See <a
+     * Activate the parsing of semantic MediaWiki (SMW) links See <a
      * href="http://en.wikipedia.org/wiki/Semantic_MediaWiki">Semantic
      * MediaWiki</a> for more information.
      *

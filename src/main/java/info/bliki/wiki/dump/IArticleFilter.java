@@ -15,7 +15,7 @@ public interface IArticleFilter {
      *          a Wikipedia article
      * @param siteinfo
      *          the site and namespace information found in the header of a
-     *          Mediawiki dump. Maybe <code>null</code>
+     *          MediaWiki dump. Maybe <code>null</code>
      * @throws SAXException
      *           throw a SAXException for stopping the processing
      */

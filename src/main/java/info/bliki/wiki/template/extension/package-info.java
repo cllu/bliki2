@@ -1,5 +1,5 @@
 /**
- * This pacage contains template parser functions which are not included in the Mediawiki standard.
+ * This pacage contains template parser functions which are not included in the MediaWiki standard.
  * Use Configuration.addTemplateFunction(<i>key</i>, <i>value</i>i>) to add the template to your
  * configuration.
  */
