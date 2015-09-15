@@ -7,7 +7,7 @@ This is a fork of [info.bliki.wiki](https://bitbucket.org/axelclk/info.bliki.wik
 - Remove the following packages: api, wiki2html, html2wiki, template extension etc
 - Add command to convert xml dump to tsv format file, in order to be consumed by MapReduce tools like Spark
 
-To convert a xml dump to tsv format: 
+To convert a xml dump to tsv format (only the main content in namespace 0): 
 
     $ mvn compile
     $ mvn exec:java -Dexec.mainClass="info.bliki.cli.Main" -Dexec.args="src/test/resources/dump/enwiki-20150112-pages-articles1.xml.bz2 data/enwiki-pages.tsv"

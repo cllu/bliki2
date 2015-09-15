@@ -40,6 +40,10 @@ public class Main {
                     System.out.println(count);
                 }
 
+                if (!page.getNamespace().equals("0")) {
+                    return;
+                }
+
                 String title = "w:" + page.getTitle().replace(" ", "_");
                 String redirect = page.getRedirect();
                 if (redirect != null) {
