@@ -9,6 +9,7 @@
     <description>This is the core project.</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <betamax.version>2.0-SNAPSHOT</betamax.version>
     </properties>
 
@@ -109,6 +110,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
                 <executions>
                     <execution>
                         <goals>
