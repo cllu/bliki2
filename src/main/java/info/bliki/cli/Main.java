@@ -40,7 +40,8 @@ public class Main {
                     System.out.println(count);
                 }
 
-                if (!page.getNamespace().equals("0")) {
+                if (page.getIntegerNamespace() != 0) {
+                    //System.out.println("skip page: " + page.getTitle());
                     return;
                 }
 
