@@ -30,14 +30,18 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class WikiXMLParser extends DefaultHandler {
     private static final String WIKIPEDIA_SITEINFO = "siteinfo";
-    private static final String WIKIPEDIA_TITLE = "title";
-    private static final String WIKIPEDIA_TEXT = "text";
-    private static final String WIKIPEDIA_PAGE = "page";
-    private static final String WIKIPEDIA_REVISION = "revision";
     private static final String WIKIPEDIA_NAMESPACE = "namespace";
-    private static final String WIKIPEDIA_TIMESTAMP = "timestamp";
-    private static final String WIKIPEDIA_REDIRECT = "redirect";
-    private static final String WIKIPEDIA_ID = "id";
+
+    private static final String WIKIPEDIA_PAGE = "page";
+    private static final String WIKIPEDIA_PAGE_ID = "id";
+    private static final String WIKIPEDIA_PAGE_TITLE = "title";
+    private static final String WIKIPEDIA_PAGE_NAMESPACE = "ns";
+    private static final String WIKIPEDIA_PAGE_REDIRECT = "redirect";
+
+    private static final String WIKIPEDIA_REVISION = "revision";
+    private static final String WIKIPEDIA_REVISION_ID = "id";
+    private static final String WIKIPEDIA_REVISION_TEXT = "text";
+    private static final String WIKIPEDIA_REVISION_TIMESTAMP = "timestamp";
 
     private Siteinfo fSiteinfo = null;
     private String fNamespaceKey = null;
@@ -126,7 +130,7 @@ public class WikiXMLParser extends DefaultHandler {
             fRevision = false;
         } else if (WIKIPEDIA_REVISION.equals(qName)) {
             fRevision = true;
-        } else if (WIKIPEDIA_REDIRECT.equals(qName)) {
+        } else if (WIKIPEDIA_PAGE_REDIRECT.equals(qName)) {
             // we assume fArticle is not null!
             fArticle.setRedirect(atts.getValue("title"));
         }
@@ -149,23 +153,24 @@ public class WikiXMLParser extends DefaultHandler {
                         fSiteinfo.setCharacterCase(getString());
                     }
                 }
-            } else {
-                if (WIKIPEDIA_PAGE.equals(qName)) {
-                    // ignore
-                } else if (WIKIPEDIA_TEXT.equals(qName)) {
+            } else if (fRevision) {
+                if (WIKIPEDIA_REVISION_TEXT.equals(qName)) {
                     fArticle.setText(getString());
                     fArticleFilter.process(fArticle, fSiteinfo);
-                    // emit(wikiText);
-                } else if (WIKIPEDIA_TITLE.equals(qName)) {
-                    fArticle.setTitle(getString(), fSiteinfo);
-                } else if (WIKIPEDIA_TIMESTAMP.equals(qName)) {
+                } else if (WIKIPEDIA_REVISION_TIMESTAMP.equals(qName)) {
                     fArticle.setTimeStamp(getString());
-                } else if (!fRevision && WIKIPEDIA_ID.equals(qName)) {
-                    // get the id from wiki page, not the id from the revision
-                    fArticle.setId(getString());
-                } else if (fRevision && WIKIPEDIA_ID.equals(qName)) {
+                } else if (WIKIPEDIA_REVISION_ID.equals(qName)) {
                     // get the id from revision, not the id from the wiki PAGE
                     fArticle.setRevisionId(getString());
+                }
+            } else {
+                if (WIKIPEDIA_PAGE_TITLE.equals(qName)) {
+                    fArticle.setTitle(getString(), fSiteinfo);
+                } else if (WIKIPEDIA_PAGE_ID.equals(qName)) {
+                    // get the id from wiki page, not the id from the revision
+                    fArticle.setId(getString());
+                } else if (WIKIPEDIA_PAGE_NAMESPACE.equals(qName)) {
+                    fArticle.setIntegerNamespace(Integer.valueOf(getString()));
                 }
             }
             fData = null;

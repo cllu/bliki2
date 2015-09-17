@@ -34,7 +34,7 @@ public class Siteinfo {
 
     /**
      * Get the namespace of this site from the given integer key. For example in
-     * an english MediaWiki installation <i>10</i> is typically the
+     * an English MediaWiki installation <i>10</i> is typically the
      * <i>Template</i> namespace and <i>14</i> is typically the <i>Category</i>
      * namespace.
      *

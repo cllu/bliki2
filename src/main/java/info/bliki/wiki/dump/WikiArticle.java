@@ -18,7 +18,6 @@ public class WikiArticle {
     private String title;
 
     public WikiArticle() {
-
     }
 
     /**
@@ -135,7 +134,7 @@ public class WikiArticle {
      * The ID of the revision of the wiki article to set.
      *
      * @param revisionId
-     *          the revisisonId to set
+     *          the revisionId to set
      */
     public void setRevisionId(String revisionId) {
         this.revisionId = revisionId;
